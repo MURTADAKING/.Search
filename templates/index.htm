@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Instagram Lookup</title>
+
+<style>
+
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+
+input{
+padding:12px;
+width:250px;
+}
+
+button{
+padding:12px 20px;
+background:#ff0066;
+color:white;
+border:none;
+}
+
+.card{
+margin-top:30px;
+background:#222;
+padding:20px;
+border-radius:10px;
+}
+
+img{
+width:120px;
+border-radius:50%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Instagram User Lookup</h1>
+
+<form method="POST">
+
+<input name="username" placeholder="username">
+
+<button>Search</button>
+
+</form>
+
+{% if result %}
+
+<div class="card">
+
+<img src="{{result.profile_pic}}">
+
+<h2>{{result.username}}</h2>
+
+<p>Name: {{result.name}}</p>
+
+<p>Followers: {{result.followers}}</p>
+
+<p>Following: {{result.following}}</p>
+
+<p>Posts: {{result.posts}}</p>
+
+<p>{{result.bio}}</p>
+
+</div>
+
+{% endif %}
+
+</body>
+</html>
